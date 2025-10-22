@@ -6,8 +6,6 @@ import messageRoutes from './routes/message.route.js';
 import { connectDB } from './lib/db.js';
 import { ENV } from './lib/env.js';
 
-dotenv.config();
-
 const app = express();
 const __dirname = path.resolve();
 
