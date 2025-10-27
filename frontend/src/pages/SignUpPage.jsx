@@ -1,15 +1,18 @@
 import { useState } from "react";
-import {useAuthStore} from "../store/useAuthStore"
+import { useAuthStore } from "../store/useAuthStore";
 import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 import { MessageCircleIcon, LockIcon, MailIcon, UserIcon, LoaderIcon } from "lucide-react";
-import { Link} from "react-router";
+import { Link } from "react-router";
+
 function SignUpPage() {
-  const [formData, setFormData] = useState({ fullname: "", email: "", password: "" });
+  const [formData, setFormData] = useState({ fullName: "", email: "", password: "" });
   const { signup, isSigningUp } = useAuthStore();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(formData);
   };
+
   return (
     <div className="w-full flex items-center justify-center p-4 bg-slate-900">
       <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
@@ -35,8 +38,8 @@ function SignUpPage() {
 
                       <input
                         type="text"
-                        value={formData.fullname}
-                        onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="input"
                         placeholder="John Doe"
                       />
@@ -117,7 +120,5 @@ function SignUpPage() {
       </div>
     </div>
   );
-
 }
-
-export default SignUpPage
+export default SignUpPage;
