@@ -1,16 +1,18 @@
 import { useState } from "react";
-import {useAuthStore} from "../store/useAuthStore";
+import { useAuthStore } from "../store/useAuthStore";
 import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
-import { MessageCircleIcon, LockIcon, MailIcon, LoaderIcon } from "lucide-react";
-import { Link} from "react-router";
+import { MessageCircleIcon, MailIcon, LoaderIcon, LockIcon } from "lucide-react";
+import { Link } from "react-router";
 
 function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { login, isLoggingIn } = useAuthStore();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     login(formData);
   };
+
   return (
     <div className="w-full flex items-center justify-center p-4 bg-slate-900">
       <div className="relative w-full max-w-6xl md:h-[800px] h-[650px]">
@@ -23,7 +25,7 @@ function LoginPage() {
                 <div className="text-center mb-8">
                   <MessageCircleIcon className="w-12 h-12 mx-auto text-slate-400 mb-4" />
                   <h2 className="text-2xl font-bold text-slate-200 mb-2">Welcome Back</h2>
-                  <p className="text-slate-400">Login to access your account</p>
+                  <p className="text-slate-400">Login to access to your account</p>
                 </div>
 
                 {/* FORM */}
@@ -103,5 +105,4 @@ function LoginPage() {
     </div>
   );
 }
-
-export default LoginPage
+export default LoginPage;
